@@ -51,13 +51,13 @@ impl Error {
     }
 
     #[track_caller]
-    pub fn queue(s: impl fmt::Display) -> Self {
-        Self::new(ErrorType::Queue(s.to_string()))
+    pub fn validation(s: impl fmt::Display) -> Self {
+        Self::new(ErrorType::Validation(s.to_string()))
     }
 
     #[track_caller]
-    pub fn validation(s: impl fmt::Display) -> Self {
-        Self::new(ErrorType::Validation(s.to_string()))
+    pub fn queue(s: impl fmt::Display) -> Self {
+        Self::new(ErrorType::Queue(s.to_string()))
     }
 
     #[track_caller]
