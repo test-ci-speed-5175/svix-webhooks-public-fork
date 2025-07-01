@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     environment: release
 
     steps:
@@ -23,7 +23,7 @@ jobs:
         with:
           components: clippy, rustfmt
 
-      - uses: Swatinem/rust-cache@v2
+      - uses: useblacksmith/rust-cache@v3
         with:
           workspaces: "rust -> target"
           # only restore cache for faster publishing, don't save back results

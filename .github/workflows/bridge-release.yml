@@ -15,7 +15,7 @@ env:
 jobs:
   release:
     name: release x86_64-unknown-linux-gnu
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     environment: release
 
     strategy:
@@ -23,7 +23,7 @@ jobs:
       matrix:
         include:
           - target: x86_64-unknown-linux-gnu
-            os: ubuntu-24.04
+            os: blacksmith-4vcpu-ubuntu-2404
             extension: ""
 
           - target: aarch64-apple-darwin
@@ -48,7 +48,7 @@ jobs:
 
   docker:
     name: release docker
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - uses: actions/checkout@v4
         with:

@@ -11,13 +11,13 @@ on:
 jobs:
   build:
     name: Build distributions
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     environment: release
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: useblacksmith/setup-python@v6
         name: Install Python
         with:
           python-version: '3.11'

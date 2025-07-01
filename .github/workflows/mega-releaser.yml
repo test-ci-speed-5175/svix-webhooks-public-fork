@@ -6,6 +6,6 @@ on: workflow_dispatch
 jobs:
   kick-off:
     name: Kick-off Releases
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - run: /bin/true
