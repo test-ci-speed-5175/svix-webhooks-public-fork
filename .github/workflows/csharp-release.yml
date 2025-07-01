@@ -11,14 +11,14 @@ on:
 jobs:
   dotnet:
     name: C# Release
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     environment: release
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v4
+        uses: useblacksmith/setup-dotnet@v5
         with:
           dotnet-version: 8.0.x
 

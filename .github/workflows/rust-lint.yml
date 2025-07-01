@@ -27,7 +27,7 @@ env:
 jobs:
   check-fmt:
     name: Check formatting
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - uses: actions/checkout@v4
 
@@ -41,7 +41,7 @@ jobs:
 
   check-unused-deps:
     name: Check for unused dependencies
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - uses: actions/checkout@v4
 
@@ -52,7 +52,7 @@ jobs:
 
   test-versions:
     name: Rust Lint
-    runs-on: ubuntu-24.04
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     strategy:
       matrix:
         rust: [stable, beta]
@@ -67,7 +67,7 @@ jobs:
         toolchain: ${{ matrix.rust }}
         components: clippy
 
-    - uses: Swatinem/rust-cache@v2
+    - uses: useblacksmith/rust-cache@v3
       with:
         workspaces: "rust -> target"
         # only save the cache on the main branch
