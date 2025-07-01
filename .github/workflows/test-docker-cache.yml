@@ -6,12 +6,13 @@ on:
     branches:
       - main
     paths:
-      - 'server/Dockerfile'
-      - '.github/.workflows/test-docker-cache.yml'
+      - 'server/**'
+      - '.github/workflows/test-docker-cache.yml'
   pull_request:
     paths:
-      - 'server/Dockerfile'
-      - '.github/.workflows/test-docker-cache.yml'
+      - 'server/**'
+      - '.github/workflows/test-docker-cache.yml'
+      
 
 jobs:
   test-image:
