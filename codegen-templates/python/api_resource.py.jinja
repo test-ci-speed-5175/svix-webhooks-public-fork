@@ -24,6 +24,7 @@ from .{{ sub.name | to_snake_case }} import (
 {% endfor %}
 
 
+
 {# FIXME: need to understand how this template generates newlines and stop generating newlines #}
 {% for op in resource.operations %}
     {%- if op | has_query_or_header_params %}
