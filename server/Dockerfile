@@ -67,3 +67,6 @@ CMD \
         WAIT_FOR_ARG="--wait-for 15"; \
     fi ; \
     exec svix-server --run-migrations $WAIT_FOR_ARG
+
+
+    

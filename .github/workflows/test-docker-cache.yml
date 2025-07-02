@@ -22,8 +22,22 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Build server image
-      run: docker compose build
+    - name: dbg image (before build)
+      run: docker image ls local-svix-server
+    
+    - name: Build docker image
+      uses: useblacksmith/build-push-action@v1
+      with:
+        push: false
+        tags: local-svix-server
+        context: server
+        load: true
+
+    - name: dbg image (after build)
+      run: docker image ls local-svix-server
+
+    - name: build docker image
+      run: docker compose pull
       working-directory: ./server
 
     - name: Run server with docker-compose

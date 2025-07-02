@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: svix/svix-server
+    image: local-svix-server
+    pull_policy: never
     environment:
       WAIT_FOR: "true"  # We want to wait for the default services
       SVIX_REDIS_DSN: "redis://redis:6379"
