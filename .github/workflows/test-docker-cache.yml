@@ -36,8 +36,8 @@ jobs:
     - name: dbg image (after build)
       run: docker image ls local-svix-server
 
-    - name: Pull docker image
-      run: docker compose pull
+    - name: build docker image
+      run: docker compose build
       working-directory: ./server
 
     - name: Run server with docker-compose
