@@ -37,7 +37,7 @@ jobs:
       run: docker image ls local-svix-server
 
     - name: build docker image
-      run: docker compose build
+      run: docker compose pull
       working-directory: ./server
 
     - name: Run server with docker-compose
